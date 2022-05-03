@@ -16,8 +16,7 @@ echo "Enter it at the command prompt below and"
 echo "press enter."
 echo ""
 # find and print all available color schemes from alacritty.yml
-sed -nr 's/.*: &(.*)$/\1/p' ~/.config/alacritty/alacritty.yml > /tmp/temp_color.txt
-cat /tmp/temp_color.txt
+sed -nr 's/.*: &(.*)$/\1/p' ~/.config/alacritty/alacritty.yml | tee /tmp/temp_color.txt
 echo ""
 echo -n "> "
 read choice
