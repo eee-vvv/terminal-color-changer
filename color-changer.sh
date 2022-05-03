@@ -8,11 +8,16 @@
 # in both places. A simple way to ensure this is to name the color scheme in alacritty.yml the same as
 # the corresponding nvim name.
 
-echo "color schemes to choose from:"
-echo "tokyonight"
-echo "catppuccin"
-echo "jellybeans-nvim"
-echo -n "your choice: "
+echo "Please pick a colorscheme from the following."
+echo ""
+echo "Enter it at the command prompt below and"
+echo "press enter."
+echo ""
+echo "---------------------------------------------"
+sed -nr 's/.*: &(.*)$/\1/p' ~/.config/alacritty/alacritty.yml
+echo "---------------------------------------------"
+echo ""
+echo -n "> "
 read choice
 
 alacritty_replacement="colors: \*$choice"
