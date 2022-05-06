@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# A simple script to change the color schemes of my alacritty and nvim config files with one command
+# A simple script to change the color schemes of my alacritty and nvim config 
+# files with one command.
+#
+# Makes the assumption that alacritty config is at ~/.config/alacritty/alacritty.yml
+# and that nvim color is set at ~/.config/nvim/color.vim
 
-######################################################################################################
-# NOTE: This script does not have robust error handling as of yet. It makes the assumption that
-# your alacritty config is located at ~/.config/alacritty/alacritty.yml and that your nvim
-# color scheme is set in ~/.config/nvim/color.vim AND that the name of the color scheme is the same
-# in both places. A simple way to ensure this is to name the color scheme in alacritty.yml the same as
-# the corresponding nvim name.
-######################################################################################################
+# Right now, only guaranteed compatible with Apple OS
+# TODO: test on my arch machine
+
 
 echo "Please pick a colorscheme from the following."
 echo
