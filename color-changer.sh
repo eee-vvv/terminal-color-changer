@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # A simple script to change the color schemes of my alacritty and nvim config 
-# files with one command.
+# files with one command. Gives user an interactive prompt if no argument, sets
+# the color scheme if there is an argument
 #
 # Makes the assumption that alacritty config is at ~/.config/alacritty/alacritty.yml
 # and that nvim color is set at ~/.config/nvim/color.vim
