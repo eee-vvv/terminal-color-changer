@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # A simple script to change the color schemes of my alacritty and nvim config 
-# files with one command. Gives user an interactive prompt if no argument, sets
+# files with one command. Gives an interactive prompt if no argument, sets
 # the color scheme if there is an argument
 #
 # Makes the assumption that alacritty config is at ~/.config/alacritty/alacritty.yml
@@ -10,6 +10,7 @@
 # Right now, only guaranteed compatible with Apple OS
 # TODO: test on my arch machine
 
+# Check to see if argument matches list of known color schemes
 check_matched () {
   if grep -Fxq "$1" /tmp/temp_color.txt; then
     return 0
@@ -18,7 +19,9 @@ check_matched () {
   fi
 }
 
+# search alacritty.yml for schemes and output them to temp file
 sed -nr 's/.*: &(.*)$/\1/p' ~/.config/alacritty/alacritty.yml > /tmp/temp_color.txt
+
 matched=false
 
 if [ $# -eq 1 ]; then
@@ -40,7 +43,6 @@ echo "Enter it at the command prompt below and"
 echo "press enter."
 echo
 
-# find and print all available color schemes from alacritty.yml
 cat /tmp/temp_color.txt
 echo
 
