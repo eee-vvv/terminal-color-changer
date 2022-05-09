@@ -37,14 +37,15 @@ elif [ $# -gt 1 ]; then
   exit 1
 fi
 
-echo "Please pick a colorscheme from the following."
-echo
-echo "Enter it at the command prompt below and"
-echo "press enter."
-echo
-
-cat /tmp/temp_color.txt
-echo
+if [ $matched = false ]; then
+  echo "Please pick a colorscheme from the following."
+  echo
+  echo "Enter it at the command prompt below and"
+  echo "press enter."
+  echo
+  cat /tmp/temp_color.txt
+  echo
+fi
 
 while [ $matched = false ]; do
   echo -n "> "
