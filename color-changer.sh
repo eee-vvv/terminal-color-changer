@@ -24,7 +24,9 @@ sed -nr 's/.*: &(.*)$/\1/p' ~/.config/alacritty/alacritty.yml > /tmp/temp_color.
 
 matched=false
 
+# check how many arguments were supplied
 if [ $# -eq 1 ]; then
+  # 1 argument: check against temp list
   if check_matched $1; then
     matched=true
     choice=$1
@@ -32,11 +34,12 @@ if [ $# -eq 1 ]; then
     echo "Invalid argument supplied"
     exit 1
   fi
-elif [ $# -gt 1 ]; then
+elif [ $# -gt 1 ]; then   # too many arguments
   echo "Too many arguments supplied"
   exit 1
 fi
 
+# if no argument supplied, enter interactive prompt
 if [ $matched = false ]; then
   echo "Please pick a colorscheme from the following."
   echo
@@ -47,6 +50,7 @@ if [ $matched = false ]; then
   echo
 fi
 
+# prompt user to enter choices until a match is found
 while [ $matched = false ]; do
   echo -n "> "
   read choice
@@ -58,6 +62,7 @@ while [ $matched = false ]; do
   fi
 done
 
+# apply changes to config files
 alacritty_replacement="colors: \*$choice"
 nvim_replacement="colorscheme $choice"
 sed -i .bak "s/^colors:.*/$alacritty_replacement/" ~/.config/alacritty/alacritty.yml
