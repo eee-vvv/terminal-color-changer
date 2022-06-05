@@ -6,3 +6,6 @@ For now, it makes the following assumptions:
 - you are on a unix-like machine
 - your alacritty config file is at `~/.config/alacritty/alacritty.yml`
 - your nvim config color scheme is set at `~/.config/nvim/color.vim`
+
+There is also a completion script that will add tab autocompletion to the command; to test it out, `source` it.
+To make it permanent, add it to your `.bashrc` or `.zshrc`, or to `etc/bash_completion.d/`
