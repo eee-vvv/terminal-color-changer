@@ -27,7 +27,7 @@ matched=false
 # check how many arguments were supplied
 if [ $# -eq 1 ]; then
   # 1 argument: check against temp list
-  if check_matched $1; then
+  if check_matched "$1"; then
     matched=true
     choice=$1
   else
@@ -53,9 +53,9 @@ fi
 # prompt user to enter choices until a match is found
 while [ $matched = false ]; do
   echo -n "> "
-  read choice
+  read -r choice
 
-  if check_matched $choice; then
+  if check_matched "$choice"; then
     matched=true
   else
     echo "Choice not valid. Please try again."
