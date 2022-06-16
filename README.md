@@ -13,6 +13,8 @@ Color Changer makes some assumptions about your environment:
 - Each Alacritty alias matches the name of the same colorscheme in your Neovim config.
   - example:
     ```yml
+    # ~/.config/alacritty/alacritty.yml
+
     ayu: &ayu
       primary:
         background: '#1f2430'
@@ -20,14 +22,14 @@ Color Changer makes some assumptions about your environment:
         bright_foreground: '#f28779'
 
       normal:
-        black:   '#212733' #
-        red:     '#f08778' #
-        green:   '#53bf97' #
-        yellow:  '#fdcc60' #
-        blue:    '#60b8d6' # 
-        magenta: '#ec7171' #
-        cyan:    '#98e6ca' #
-        white:   '#fafafa' #
+        black:   '#212733'
+        red:     '#f08778'
+        green:   '#53bf97'
+        yellow:  '#fdcc60'
+        blue:    '#60b8d6' 
+        magenta: '#ec7171'
+        cyan:    '#98e6ca'
+        white:   '#fafafa'
 
       bright:
         black: '#686868'
