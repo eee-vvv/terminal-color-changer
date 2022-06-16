@@ -1,5 +1,7 @@
 # Color Changer
 
+![Demo of Color Changer functionality](./color.gif)
+
 Color Changer is a simple bash script for changing my color schemes in both my Alacritty and Neovim config files simultaneously. It includes a script for tab autocompletion. If passed an argument which is a valid color scheme, it will make the changes to the relevant config files. If not, it will initiate an interactive prompt with a list of all available color schemes.
 
 ## Assumptions
