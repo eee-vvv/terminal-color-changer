@@ -9,9 +9,13 @@ Color Changer makes some assumptions about your environment:
 - You are on a Mac or BSD machine (the `sed` command differs slightly on Linux—a cross-compatible version is in the works).
 - Your Alacritty config file is at `~/.config/alacritty/alacritty.yml`
 - Your Neovim color scheme is set at `~/.config/nvim/color.vim`
+    ```vim
+    " ~/.config/nvim/color.vim (sourced in init.vim)
+    
+    colorscheme ayu
+    ```
 - In your Alacritty config file, your color schemes are saved using `&` to alias each scheme.
 - Each Alacritty alias matches the name of the same colorscheme in your Neovim config.
-  - example:
     ```yml
     # ~/.config/alacritty/alacritty.yml
 
