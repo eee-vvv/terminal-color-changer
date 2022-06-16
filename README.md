@@ -64,3 +64,5 @@ source ./_color_changer_completion
 ```
 
 If you enter an invalid argument or too many arguments, the script will not make any changes to your config files and will alert you to your mistake. If you enter an invalid scheme at the interactive prompt, you will be prompted to try again.
+
+In order to make the script more permanent, you can copy (or symlink) the main script to a directory in your `$PATH`. To permanently enable autocompletion, source the completion script in `~/.bashrc`, `~/.bash_completion`, or `~/etc/bash_completion.d` if you want to make it available to all users. If you are using zsh and you have ohmyzsh installed, make sure to place the line at the end of `~/.zshrc` or it will not work. If you are not using ohmyzsh or you are using another shell, like fish, additional measures will need to be taken to ensure that the completion script is run by bash.
