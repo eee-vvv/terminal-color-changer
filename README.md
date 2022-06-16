@@ -15,7 +15,6 @@ Color Changer makes some assumptions about your environment:
     colorscheme ayu
     ```
 - In your Alacritty config file, your color schemes are saved using `&` to alias each scheme.
-- Each Alacritty alias matches the name of the same colorscheme in your Neovim config.
     ```yml
     # ~/.config/alacritty/alacritty.yml
 
@@ -47,11 +46,21 @@ Color Changer makes some assumptions about your environment:
 
     colors: *ayu
     ```
+- Each Alacritty alias matches the name of the same colorscheme in your Neovim config.
 
 If any of these are not true, the scripts are well-documented and can be easily altered to meet your needs.
 
 ## Using the script
 
-1. `git clone https://github.com/eee-vvv/terminal-color-changer.git`
-2. `cd terminal-color-changer`
-4. `source ./_color_changer_completion`
+```bash
+git clone https://github.com/eee-vvv/terminal-color-changer.git
+cd terminal-color-changer
+# source autocompletion script
+source ./_color_changer_completion
+# run command with interactive prompt
+./color-changer
+# run command with argument
+./color-changer ayu
+```
+
+If you enter an invalid argument or too many arguments, the script will not make any changes to your config files and will alert you to your mistake. If you enter an invalid scheme at the interactive prompt, you will be prompted to try again.
