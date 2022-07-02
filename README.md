@@ -8,7 +8,7 @@ Color Changer is a simple bash script for changing my color schemes in both my A
 
 Color Changer makes some assumptions about your environment:
 
-- You are on a Mac or BSD machine (the `sed` command differs slightly on Linux—a cross-compatible version is in the works).
+- You are on a Mac or Linux machine
 - Your Alacritty config file is at `~/.config/alacritty/alacritty.yml`
 - Your Neovim color scheme is set at `~/.config/nvim/color.vim`
     ```vim
