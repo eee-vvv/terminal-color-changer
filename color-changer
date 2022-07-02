@@ -7,9 +7,6 @@
 # Makes the assumption that alacritty config is at ~/.config/alacritty/alacritty.yml
 # and that nvim color is set at ~/.config/nvim/color.vim
 
-# Right now, only guaranteed compatible with Apple OS
-# TODO: test on my arch machine
-
 # Check to see if argument matches list of known color schemes
 check_matched () {
   if grep -Fxq "$1" /tmp/temp_color.txt; then
@@ -65,5 +62,13 @@ done
 # apply changes to config files
 alacritty_replacement="colors: \*$choice"
 nvim_replacement="colorscheme $choice"
-sed -i .bak "s/^colors:.*/$alacritty_replacement/" ~/.config/alacritty/alacritty.yml
-sed -i .bak "s/^colorscheme.*/$nvim_replacement/" ~/.config/nvim/color.vim
+
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  sed -i "s/^colors:.*/$alacritty_replacement/" ~/.config/alacritty/alacritty.yml
+  sed -i "s/^colorscheme.*/$nvim_replacement/" ~/.config/nvim/color.vim
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+  sed -i .bak "s/^colors:.*/$alacritty_replacement/" ~/.config/alacritty/alacritty.yml
+  sed -i .bak "s/^colorscheme.*/$nvim_replacement/" ~/.config/nvim/color.vim
+else
+  echo "Unsupported OS. This script only works on Mac and GNU/Linux"
+fi
